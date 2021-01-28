@@ -25,7 +25,7 @@ def validate(passwd, role):
         elif re.search('[a-z]', passwd) is None:
             return("The password is not accepted, it must have at least one letter")
 
-        elif re.search('[!@#$%^&*]{3}', passwd) is None:
+        elif re.search('[!@#$%^&*]', passwd) is None:
             return("The password is not accepted, it must have at least one special symbol: '!', '@', '#', '$', '%', '^', '&', or '*'")
 
         else:
