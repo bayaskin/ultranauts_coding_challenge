@@ -45,7 +45,7 @@ def test_only_letters_admin():
 	assert 'The password is not accepted' in validation
 
 def test_correct_passwd_admin():
-	passwd = '!qwertypassword123'
+	passwd = '!qwerty@password123#'
 	role = 'admin'
 	validation = validate(passwd, role)
 	assert 'The password is accepted' in validation

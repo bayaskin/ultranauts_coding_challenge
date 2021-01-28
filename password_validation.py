@@ -4,7 +4,7 @@ import re
 def validate(passwd, role):
     if role == 'regular':
 
-        if len(passwd) < 8:
+        if len(passwd) < 10:
             return("The password is not accepted, it is not long enough")
 
         elif re.search('[0-9]', passwd) is None:
@@ -25,8 +25,8 @@ def validate(passwd, role):
         elif re.search('[a-z]', passwd) is None:
             return("The password is not accepted, it must have at least one letter")
 
-        elif re.search('[!@#$%^&*]', passwd) is None:
-            return("The password is not accepted, it must have at least one special symbol: '!', '@', '#', '$', '%', '^', '&', or '*'")
+        elif re.search('(.*[!@#$%^&*]){3,}', passwd) is None:
+            return("The password is not accepted, it must have at least three special symbols: '!', '@', '#', '$', '%', '^', '&', or '*'")
 
         else:
             return("The password is accepted")
